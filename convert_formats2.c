@@ -61,9 +61,9 @@ void root13(va_list list, char *buffer)
 
 	for (i = 0; root[i]; i++)
 	{
-		if (root[i] <= 109 && root[i] >= 97)
+		if ((root[i] <= 109 && root[i] >= 97) || (root[i] <= 77 && root[i] >= 65))
 			root[i] += 13;
-		else if (root[i] > 109 && root[i] < 123)
+		else if ((root[i] > 109 && root[i] < 123) || (root[i] < 90 && root[i] > 77))
 			root[i] -= 13;
 	}
 	_strncat(buffer, root, _strlen(root));
