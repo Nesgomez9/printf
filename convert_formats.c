@@ -157,13 +157,16 @@ void hex(va_list list, char *buffer)
 		return;
 	for (i = 0; c > 15; i++)
 	{
-		if (c % 2 < 10)
-			s[i] = c % 2 + '0';
+		if (c % 16 < 10)
+			s[i] = c % 16 + '0';
 		else
-			s[i] = c % 2 + 'W';
+			s[i] = c % 16 + 'W';
 		c /= 16;
 	}
-	s[i] = c + '0';
+	if (c % 16 < 10)
+		s[i] = c % 16 + '0';
+	else
+		s[i] = c % 16 + 'W';
 	s[++i] = 0;
 	rev_string(s);
 	_strncat(buffer, s, _strlen(s));
