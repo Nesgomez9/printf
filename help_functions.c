@@ -1,34 +1,4 @@
 #include "holberton.h"
-#include <unistd.h>
-
-/**
- * _strncat - Function that concatenates two strings.
- * @dest: String destination.
- * @src: Source String.
- * @n: int.
- *
- * Return: dest.
- */
-
-char *_strncat(char *dest, char *src, int n)
-{
-	int a, b;
-
-	a = 0;
-	b = 0;
-
-	while (dest[a] != '\0')
-	{
-		a++;
-	}
-	while (b < n)
-	{
-		dest[a] = src[b];
-		a++;
-		b++;
-	}
-	return (dest);
-}
 
 /**
  * _strlen - writes the character c to stdout
@@ -42,7 +12,7 @@ int _strlen(char *s)
 {
 	int i = 0;
 
-        while (s[i] != '\0')
+	while (s[i] != '\0')
 	{
 		i++;
 	}
