@@ -69,3 +69,70 @@ void root13(va_list list, char *buffer)
 	_strncat(buffer, root, _strlen(root));
 	free_buffer(root);
 }
+/**
+ * hex_string - Print a string.
+ * @s: Variable.
+ *
+ * Return: String length.
+ */
+
+char *hex_string(char s)
+{
+	char *str = malloc(5);
+	int a = s;
+	int i = 0;
+
+	str[i++] = '\\';
+	str[i++] = 'x';
+
+	if (s <= 15)
+	{
+		str[i++] = '0';
+	}
+	if (a % 16 < 10)
+		str[i++] = a % 16 + '0';
+	if (a % 16 >= 10)
+		str[i++] = a % 16 + '7';
+	a /= 16;
+	if (a < 10 && a > 0)
+		str[i++] = a + '0';
+	if (a >= 10)
+		str[i++] = a + '7';
+	str[i++] = 0;
+	return (str);
+}
+/**
+ * print_String - Print a string.
+ * @list: Variable.
+ *
+ * @buffer: buffer
+ * Return: String length.
+ */
+
+void print_String(va_list list, char *buffer)
+{
+	int i;
+	char *str;
+	char *dest;
+
+	str = va_arg(list, char *);
+	if (!str)
+	{
+		str = "(null)";
+	}
+	i = 0;
+	while (str[i])
+	{
+		if ((str[i] > 0 && str[i] < 32) || str[i] >= 127)
+		{
+			dest = hex_string(str[i]);
+			_strncat(buffer, dest, _strlen(dest));
+			free_buffer(dest);
+		}
+		else
+		{
+			_charncat(buffer, str[i]);
+		}
+		i++;
+	}
+}
