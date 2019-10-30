@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 		{"r", reverse},
 		{"o", octal},
 		{"x", hex},
-		{"X", hex},
+		{"X", Hex},
 		{NULL, NULL}
 	};
 	int print;
