@@ -22,6 +22,7 @@ int _printf(const char *format, ...)
 		{"o", octal},
 		{"x", hex},
 		{"X", Hex},
+		{"R", root13},
 		{NULL, NULL}
 	};
 	int print;

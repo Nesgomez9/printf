@@ -42,3 +42,30 @@ void Hex(va_list list, char *buffer)
 	_strncat(buffer, s, _strlen(s));
 	free(s);
 }
+
+/**
+ * root13 - Print a character.
+ * @list: Variable.
+ * @buffer: buffer
+ *
+ * Return: 1 (character length).
+ */
+
+void root13(va_list list, char *buffer)
+{
+	int i;
+	char *s = va_arg(list, char*);
+	char *root = malloc(_strlen(s));
+
+	_strncat(root, s, _strlen(s));
+
+	for (i = 0; root[i]; i++)
+	{
+		if (root[i] <= 109 && root[i] >= 97)
+			root[i] += 13;
+		else if (root[i] > 109 && root[i] < 123)
+			root[i] -= 13;
+	}
+	_strncat(buffer, root, _strlen(root));
+	free_buffer(root);
+}

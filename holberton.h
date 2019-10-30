@@ -30,6 +30,7 @@ void binary(va_list list, char *buffer);
 void octal(va_list list, char *buffer);
 void hex(va_list list, char *buffer);
 void Hex(va_list list, char *buffer);
+void root13(va_list list, char *buffer);
 int _putchar(char c);
 void rev_string(char *s);
 char *_strncat(char *dest, char *src, int n);
