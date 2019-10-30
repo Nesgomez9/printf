@@ -1,0 +1,59 @@
+.TH man 3 "29 Oct 2019" "0.01" "Holberton's _printf man page"
+.SH NAME
+.B _printf
+- format and print data with length print as return.
+.SH SYNOPSIS
+_printf
+.I FORMAT
+.IR [ARGUMENTS] ...
+.SH DESCRIPTION
+.B Return value
+
+On Sucess output
+.B _printf
+will print in stdout the number of characters passed and the arguments
+(without the null).
+
+On Error output
+.B _printf
+will print in stdout the value of -1 (in case of receiving % without
+specific format and in case of receiving nothing).
+
+.B Formats
+
+If
+.B _printf
+if it detects a %, but does not contain a format (besides not being alone, in
+that case is Error), it will print as if it were a string.
+This version of _printf is able to identify the following formats:
+
+%c     The argument is printed as a character and return 1.
+
+%s     The argument is printed as a string and return string length.
+
+%%     Print a percent and return 1.
+
+%d     The argument is printed as a decimal number and return number length.
+
+%i     The argument is printed as a decimal number and return number length.
+
+%b     The argument is converted and printed in binary form and return number
+length.
+
+%r     The argument is printed backwards and return string length.
+
+.B _printf
+uses some functions created in Holberton and others of its own for its operation
+such as: _strlen, _strcat, rev_string, _putchar, among others.
+you can find them in the authors GitHub.
+
+.SH OPTIONS
+.B _print
+does not take any options. However, you can supply arguments.
+.SH SEE ALSO
+.I write(2), malloc(2), free(3), va_start(3), va_end(3), va_copy(3), va_arg(3)
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Nicolas Esteban Gomez Tellez (https://github.com/nicolas9909)
+and Sebastian Chingate Cepeda (https://github.com/sebastianchc)
