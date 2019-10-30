@@ -130,8 +130,6 @@ void print_u_number(va_list list, char *buffer)
 	}
 }
 
-#include "holberton.h"
-
 /**
  * hex - Print a character.
  * @list: Variable.
